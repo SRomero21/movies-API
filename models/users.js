@@ -15,6 +15,7 @@ const Users = sequelize.define("users", {
   email: {
     type: DataTypes.STRING(100),
     allowNull: false,
+    unique: true
   },
   passsword: {
     type: DataTypes.STRING(255),
@@ -24,7 +25,12 @@ const Users = sequelize.define("users", {
     type: DataTypes.STRING(10),
     defaultValue: "active",
     allowNull: false,
-  },
+  }, 
+  role : {
+    type: DataTypes.STRING(10),
+    allowNull: false,
+    defaultValue: 'guest'
+  }
 });
 
 module.exports = {Users}
